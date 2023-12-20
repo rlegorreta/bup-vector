@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  bup-vector:
+    image: bup-vector
+    container_name: bup-vector
+    env_file:
+      - local.env
+    environment:
+      - SPEED=1
+    ports:
+      - 8902:80
+    volumes:
+      - ../:/app
+    networks:
+      - ailegorretaNet
+
+networks:
+  ailegorretaNet:
+    external: true
